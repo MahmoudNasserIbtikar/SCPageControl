@@ -56,9 +56,13 @@ class SCP_SCNormal: UIView {
             if i == currentOfPage {
                 f_width = 25.0
                 img_page.alpha = 1.0
+                img_page.backgroundColor = current_color
+
             } else {
                 f_width = 10.0
                 img_page.alpha = 0.4
+                img_page.backgroundColor = .gray
+
             }            
             
             img_page.frame = CGRect(x: f_x, y: f_y, width: f_width, height: f_height)
