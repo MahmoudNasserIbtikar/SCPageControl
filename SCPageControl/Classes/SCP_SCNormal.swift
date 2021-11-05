@@ -67,7 +67,7 @@ class SCP_SCNormal: UIView {
             
             img_page.frame = CGRect(x: f_x, y: f_y, width: f_width, height: f_height)
             img_page.layer.cornerRadius = img_page.frame.size.height/2.0
-            img_page.backgroundColor = current_color
+//            img_page.backgroundColor = current_color
             img_page.tag = i+10
             self.addSubview(img_page)
             
