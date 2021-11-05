@@ -25,9 +25,6 @@ import UIKit
     
     var numberOfPage: Int = 0, currentOfPage: Int = 0
     var f_start_point: CGFloat = 0.0, f_start: CGFloat = 0.0
-   
-    var scNormal_width: CGFloat = 10
-    var scNormal_height: CGFloat = 10
     
     public required init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)!
@@ -42,7 +39,7 @@ import UIKit
     }
     
     //MARK: ## view init method ##
-    public func set_view(_ page: Int, current: Int, current_color: UIColor) {
+    public func set_view(_ page: Int, current: Int, current_color: UIColor, scNormal_width: CGFloat, scNormal_height: CGFloat) {
         let viewFrame = calculateViewRealSize()
         switch scp_style {
         case .SCJAMoveCircle:
