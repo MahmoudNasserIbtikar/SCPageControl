@@ -15,13 +15,17 @@ class SCP_SCNormal: UIView {
     
     var screenWidth : CGFloat = UIScreen.main.bounds.size.width
     var screenHeight : CGFloat = UIScreen.main.bounds.size.height
+    var f_width: CGFloat = 10
+    var f_height: CGFloat = 10
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)!
     }
     
-    override init(frame:CGRect) {
+    init(frame:CGRect, width: CGFloat, height: CGFloat) {
         super.init(frame:frame)
+        self.f_width = width
+        self.f_height = height
     }
     
     override func layoutSubviews() {
@@ -41,7 +45,7 @@ class SCP_SCNormal: UIView {
             return
         }
         
-        var f_width: CGFloat = 10.0, f_height: CGFloat = 10.0
+//        var f_width: CGFloat = 10.0, f_height: CGFloat = 10.0
         var f_x: CGFloat = (self.frame.size.width-f_all_width)/2.0, f_y: CGFloat = (self.frame.size.height-f_height)/2.0
         
         f_start_point = f_x

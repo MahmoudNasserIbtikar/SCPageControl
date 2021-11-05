@@ -26,6 +26,8 @@ import UIKit
     var numberOfPage: Int = 0, currentOfPage: Int = 0
     var f_start_point: CGFloat = 0.0, f_start: CGFloat = 0.0
    
+    var scNormal_width: CGFloat = 10
+    var scNormal_height: CGFloat = 10
     
     public required init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)!
@@ -59,7 +61,7 @@ import UIKit
             scp_scjaflatbar.set_view(page, current: current, current_color: current_color)
             self.addSubview(scp_scjaflatbar)
         default: //.SCNormal
-            let scp_normal = SCP_SCNormal(frame: viewFrame)
+            let scp_normal = SCP_SCNormal(frame: viewFrame, width: scNormal_width, height: scNormal_height)
             scp_normal.tag = scp_style.rawValue
             scp_normal.set_view(page, current: current, current_color: current_color)
             self.addSubview(scp_normal)
