@@ -89,7 +89,7 @@ import UIKit
     }
     
     //MARK: ## ScrollView move method ##
-    open func scroll_did(_ scrollView: UIScrollView, currentColor: UIColor, disableColor: UIColor) {
+    open func scroll_did(_ scrollView: UIScrollView) {
         switch scp_style {
         case .SCJAMoveCircle:
             if let scp: SCP_SCJAMoveCircle = self.viewWithTag(scp_style.rawValue) as? SCP_SCJAMoveCircle {
@@ -105,7 +105,7 @@ import UIKit
             }
         default: //.SCNormal
             if let scp: SCP_SCNormal = self.viewWithTag(scp_style.rawValue) as? SCP_SCNormal {
-                scp.scroll_did(scrollView, currentColor: currentColor, disableColor: disableColor)
+                scp.scroll_did(scrollView)
             }            
         }
     }

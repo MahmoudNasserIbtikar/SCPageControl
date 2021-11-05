@@ -56,18 +56,14 @@ class SCP_SCNormal: UIView {
             if i == currentOfPage {
                 f_width = 25.0
                 img_page.alpha = 1.0
-                img_page.backgroundColor = current_color
-
             } else {
                 f_width = 10.0
                 img_page.alpha = 0.4
-                img_page.backgroundColor = .gray
-
             }            
             
             img_page.frame = CGRect(x: f_x, y: f_y, width: f_width, height: f_height)
             img_page.layer.cornerRadius = img_page.frame.size.height/2.0
-//            img_page.backgroundColor = current_color
+            img_page.backgroundColor = current_color
             img_page.tag = i+10
             self.addSubview(img_page)
             
@@ -76,7 +72,7 @@ class SCP_SCNormal: UIView {
     }
     
     // ## Call the move page in scrollView ##
-    func scroll_did(_ scrollView: UIScrollView, currentColor: UIColor, disableColor: UIColor) {
+    func scroll_did(_ scrollView: UIScrollView) {
      
         let f_page = scrollView.contentOffset.x / scrollView.frame.size.width
         
@@ -94,7 +90,6 @@ class SCP_SCNormal: UIView {
                                    width: 25+(f_move+((CGFloat(tag_value)-10)*15)),
                                    height: iv_page.frame.size.height)
             iv_page.alpha = 1-f_alpha
-            iv_page.backgroundColor = disableColor
             
             if let iv_page_next: UIImageView = self.viewWithTag(tag_value+1) as? UIImageView {
                 let f_page_next_x: CGFloat = ((f_start_point+35)+((CGFloat(tag_value)-10)*20))
@@ -103,8 +98,6 @@ class SCP_SCNormal: UIView {
                                             width: 10-(f_move+((CGFloat(tag_value)-10)*15)),
                                             height: iv_page_next.frame.size.height)
                 iv_page_next.alpha = 0.4+f_alpha
-                iv_page_next.backgroundColor = currentColor
-
             }
         }
     }
